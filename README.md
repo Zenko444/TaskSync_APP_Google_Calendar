@@ -12,7 +12,7 @@ Note: AI has been used in the creation of this application. It was purely made t
 ```
 tasksync/
 ├── frontend/
-│   ├── index.html          ← App shell
+│   ├── web.html          ← App shell
 │   ├── css/
 │   │   └── interface.css       ← All styles
 │   └── js/
