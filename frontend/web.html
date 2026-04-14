@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskSync</title>
+  <link rel="stylesheet" href="css/interface.css" />
+  <script src="https://accounts.google.com/gsi/client"></script>
+</head>
+<body>
+
+  <!-- ── Header ───────────────────────────────────────── -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">✓</div>
+      TaskSync
+    </div>
+    <div class="header-right">
+      <div id="user-chip" class="user-chip hidden">
+        <img id="user-avatar" src="" alt="avatar" />
+        <span id="user-name"></span>
+        <span id="user-role"></span>
+      </div>
+      <button id="auth-btn" onclick="handleAuth()">
+        <span id="auth-icon">🔐</span>
+        <span id="auth-label">Sign in with Google</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Add / Edit Form ───────────────────────────── -->
+    <section class="card" id="form-section">
+      <div class="card-title" id="form-mode-label">➕ New Task</div>
+      <div class="form-grid">
+        <div class="full">
+          <label for="task-title">Title *</label>
+          <input type="text" id="task-title" placeholder="e.g. Team standup meeting" />
+        </div>
+        <div class="full">
+          <label for="task-desc">Description</label>
+          <textarea id="task-desc" placeholder="Add details, notes, or context..."></textarea>
+        </div>
+        <div>
+          <label for="task-start">Start Date &amp; Time *</label>
+          <input type="datetime-local" id="task-start" />
+        </div>
+        <div>
+          <label for="task-end">End Date &amp; Time *</label>
+          <input type="datetime-local" id="task-end" />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-primary" id="submit-btn" onclick="submitTask()">
+          <span>📅</span>
+          <span id="submit-label">Add to Calendar</span>
+        </button>
+        <button class="btn-ghost" id="cancel-edit-btn" style="display:none" onclick="cancelEdit()">
+          Cancel
+        </button>
+      </div>
+    </section>
+
+    <!-- ── Task List ─────────────────────────────────── -->
+    <div class="section-header">
+      <span class="section-title">📋 Your Tasks</span>
+      <button class="refresh-btn" onclick="loadTasks()">↻ Refresh</button>
+    </div>
+    <div id="task-list">
+      <div class="sign-in-prompt">
+        <div class="icon">🔐</div>
+        <h3>Sign in to see your tasks</h3>
+        <p>Connect your Google account to sync tasks with Google Calendar.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="toast"></div>
+
+  <script src="js/CRUD_and_flow.js"></script>
+</body>
+</html>
