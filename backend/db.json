@@ -2,21 +2,21 @@
   "allowedUsers": [
     {
       "id": 1,
-      "email": "lunguchris0@gmail.com",
-      "name": "Chris",
+      "email": "test@gmail.com",
+      "name": "Hris",
       "role": "admin",
       "addedAt": "2026-04-15"
     },
     {
       "id": 2,
-      "email": "relaxationmoes@gmail.com",
+      "email": "test@gmail.com",
       "name": "Moes",
       "role": "user",
       "addedAt": "2026-04-15"
     },
     {
       "id": 3,
-      "email": "lunguchristian0@gmail.com",
+      "email": "saphire@gmail.com",
       "name": "Zenko",
       "role": "user",
       "addedAt": "2026-04-15"
